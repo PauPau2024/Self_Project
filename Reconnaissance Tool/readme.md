@@ -17,3 +17,78 @@ The project depends on several Python packages. You can install them using the f
 
 ```bash
 pip install -r requirements.txt
+```
+
+# Cybersecurity Reconnaissance Tool
+
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/your-repository.git
+    cd your-repository
+    ```
+
+2. Install the required packages:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Run the Flask application:
+
+    ```bash
+    python app.py
+    ```
+
+## Usage
+
+### SQL Injection
+- **Endpoint:** `/sql_injection`
+- **Method:** POST
+- **Parameters:**
+  - `url`: URL of the page to test.
+  - `sort_by`: Field to sort the results (`code`, `time`, or `length`).
+
+### XSS Injection
+- **Endpoint:** `/xss_injection`
+- **Method:** POST
+- **Parameters:**
+  - `url`: URL of the page to test.
+  - `sort_by`: Field to sort the results (`code`, `time`, or `length`).
+
+### Nmap Scanner
+- **Endpoint:** `/nmap_scanner`
+- **Method:** POST
+- **Parameters:**
+  - `ip`: IP address to scan.
+  - `scan_type`: Type of scan to perform (e.g., Ping Scan, Regular Scan, Intense Scan).
+
+### Subdomain Finder
+- **Endpoint:** `/subdomains_finder`
+- **Method:** POST
+- **Parameters:**
+  - `ip`: IP address for which subdomains need to be found.
+
+### Robots.txt Processor
+- **Endpoint:** `/robots`
+- **Method:** POST
+- **Parameters:**
+  - `ip`: IP address to fetch `robots.txt` from.
+
+## File Outputs
+
+- **SQL Injection Results:** `sql_injection_output.txt`
+- **XSS Injection Results:** `xss_injection_output.txt`
+- **Nmap Results:** `nmap_output.txt`
+
+These files are generated during the testing process and can be accessed through the respective endpoints.
+
+## Contributing
+
+Feel free to open issues or submit pull requests if you have improvements or suggestions for the project.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
