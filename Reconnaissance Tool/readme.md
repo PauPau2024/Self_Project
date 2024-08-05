@@ -16,7 +16,11 @@ This Flask application provides a suite of tools for security testing and analys
 The project depends on several Python packages. You can install them using the following command:
 
 ```bash
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
+```
+## Running the Tool
+```bash
+sudo python main.py
 ```
 
 # Cybersecurity Reconnaissance Tool
