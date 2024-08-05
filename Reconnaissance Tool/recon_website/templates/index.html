@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconnaissance Tools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        form {
+            background: #f4f4f4;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="url"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #e6e6e6;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reconnaissance Tools</h1>
+    
+    <form action="/lookup" method="post">
+        <h2>IP Lookup</h2>
+        <label for="ip-lookup">Enter IP address:</label>
+        <input type="text" id="ip-lookup" name="ip" required>
+        <button type="submit">Lookup IP</button>
+    </form>
+    
+    <form action="/robots" method="post">
+        <h2>Robots.txt Retrieval</h2>
+        <label for="ip-robots">Enter IP address:</label>
+        <input type="text" id="ip-robots" name="ip" required>
+        <button type="submit">Get Robots.txt</button>
+    </form>
+    
+    <form action="/subdomains_finder" method="post">
+        <h2>Subdirectory Finder</h2>
+        <label for="ip-subdomains">Enter IP address:</label>
+        <input type="text" id="ip-subdomains" name="ip" required>
+        <button type="submit">Find Subdomains</button>
+    </form>
+    
+    <form action="/robots_subdomain_finder" method="post">
+        <h2>Robots Subdirectory Finder</h2>
+        <label for="ip-robots-subdomains">Enter IP address:</label>
+        <input type="text" id="ip-robots-subdomains" name="ip" required>
+        <button type="submit">Find Robots Subdomains</button>
+    </form>
+    
+    <form action="/CTF_Finder" method="post">
+        <h2>CTF Finder</h2>
+        <label for="ip-ctf">Enter IP address:</label>
+        <input type="text" id="ip-ctf" name="ip" required>
+        <label for="string-ctf">Enter string to search:</label>
+        <input type="text" id="string-ctf" name="string" required>
+        <button type="submit">Find CTF Strings</button>
+    </form>
+    
+    <form action="/nmap_scanner" method="post">
+        <h2>Nmap Scanner</h2>
+        <label for="ip-nmap">Enter IP address:</label>
+        <input type="text" id="ip-nmap" name="ip" required>
+        <label for="scan_type">Select scan type:</label>
+        <select id="scan_type" name="scan_type">
+            <option value="Ping Scan">Ping Scan</option>
+            <option value="Regular Scan">Regular Scan</option>
+            <option value="Quick traceroute">Quick traceroute</option>
+            <option value="Quick scan">Quick scan</option>
+            <option value="Quick scan plus">Quick scan plus</option>
+            <option value="Intense scan">Intense scan</option>
+            <option value="Intense scan, all TCP ports">Intense scan, all TCP ports</option>
+            <option value="Intense scan plus UDP">Intense scan plus UDP</option>
+            <option value="Intense scan, no ping">Intense scan, no ping</option>
+            <option value="Slow comprehensive scan">Slow comprehensive scan</option>
+        </select>
+        <button type="submit">Scan with Nmap</button>
+    </form>
+    
+    <form action="/sql_injection" method="post">
+        <h2>SQL Injection Test</h2>
+        <label for="url-sql">Enter URL:</label>
+        <input type="url" id="url-sql" name="url" required>
+        <button type="submit">Test SQL Injection</button>
+    </form>
+    
+    <form action="/xss_injection" method="post">
+        <h2>XSS Injection Test</h2>
+        <label for="url-xss">Target URL:</label>
+        <input type="url" id="url-xss" name="url" required>
+        <label for="sort_by">Sort Results By:</label>
+        <select id="sort_by" name="sort_by">
+            <option value="code">Status Code</option>
+            <option value="time">Response Time</option>
+            <option value="length">Response Length</option>
+        </select>
+        <button type="submit">Test XSS Injection</button>
+    </form>
+    
+    <h2>Processed Subdirectory</h2>
+    <ul>
+        {% for subdomain in subdomains %}
+            <li>{{ subdomain }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Output Files</h2>
+    <ul>
+        <li><a href="/output">View Output File Contents</a></li>
+        <li><a href="/nmap_output">View Nmap Output File Contents</a></li>
+        <li><a href="/sql_injection_output">View SQL Injection Output</a></li>
+        <li><a href="/xss_injection_output">View XSS Injection Output</a></li>
+
+    </ul>
+</body>
+</html>

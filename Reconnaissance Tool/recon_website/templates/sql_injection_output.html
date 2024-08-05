@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Test Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .alert {
+            margin-bottom: 20px;
+        }
+        .back-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">SQL Injection Test Results</h1>
+        
+        {% if file_content %}
+            <div class="alert alert-info">
+                <p>The following results were found during the SQL injection test:</p>
+            </div>
+            <pre>{{ file_content }}</pre>
+        {% else %}
+            <div class="alert alert-warning">
+                <p>No SQL injection test results are available. Please run a test first.</p>
+            </div>
+        {% endif %}
+        
+        <div class="text-center back-button">
+            <a href="/" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

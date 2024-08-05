@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lookup Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Lookup Result</h1>
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>IP:</strong> {{ data.query }}</li>
+                <li class="list-group-item"><strong>Country:</strong> {{ data.country }}</li>
+                <li class="list-group-item"><strong>Region:</strong> {{ data.regionName }}</li>
+                <li class="list-group-item"><strong>City:</strong> {{ data.city }}</li>
+                <li class="list-group-item"><strong>ISP:</strong> {{ data.isp }}</li>
+                <li class="list-group-item"><strong>Location:</strong> {{ data.lat  }} {{ data.lon }}</li>
+            </ul>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Injection Tool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">XSS Injection Tool</h1>
+        <form method="post" action="/xss_injection">
+            <div class="form-group">
+                <label for="url">Target URL</label>
+                <input type="url" class="form-control" id="url" name="url" placeholder="Enter the target URL" required>
+            </div>
+            <div class="form-group">
+                <label for="sort_by">Sort Results By</label>
+                <select class="form-control" id="sort_by" name="sort_by">
+                    <option value="code">Status Code</option>
+                    <option value="time">Response Time</option>
+                    <option value="length">Response Length</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

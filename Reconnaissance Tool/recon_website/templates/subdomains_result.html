@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subdomains Finder Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .results-container {
+            margin-top: 20px;
+        }
+        .result {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .error {
+            color: #dc3545;
+        }
+        .status {
+            color: #28a745;
+        }
+        .length {
+            color: #17a2b8;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Subdomains Finder Results</h1>
+    <div class="results-container">
+        {% if results %}
+            {% for result in results %}
+                <div class="result">
+                    {% if 'Error' in result %}
+                        <p class="error">{{ result }}</p>
+                    {% else %}
+                        <p class="status">{{ result.split(' Length: ')[0] }}</p>
+                        <p class="length">Length: {{ result.split(' Length: ')[1].split(' ')[0] }}</p>
+                        <p>{{ result.split(' Length: ')[1].split(' ')[1] }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>
