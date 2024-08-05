@@ -22,30 +22,6 @@ sudo pip install -r requirements.txt
 ```bash
 sudo python main.py
 ```
-
-# Cybersecurity Reconnaissance Tool
-
-## Installation
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/yourusername/your-repository.git
-    cd your-repository
-    ```
-
-2. Install the required packages:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Run the Flask application:
-
-    ```bash
-    python app.py
-    ```
-
 ## Usage
 
 ### SQL Injection
